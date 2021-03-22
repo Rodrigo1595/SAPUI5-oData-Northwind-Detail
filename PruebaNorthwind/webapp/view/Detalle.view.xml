@@ -1,0 +1,91 @@
+<mvc:View xmlns:form="sap.ui.layout.form" controllerName="PruebaNorthwind.PruebaNorthwind.controller.Detalle" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+    <Page id="page" title="{i18n>detalle}" navButtonPress="onNavBack" showNavButton='true'>
+		<content>
+                <OverflowToolbar id="toolbarForm"  design="Info" height="2rem"  >
+                    <Text id="myText" text="{i18n>mostrarDetalle} {orderModelId>/OrderID}"/>
+                    <ToolbarSpacer/>
+	            </OverflowToolbar>
+             <form:SimpleForm
+                title="{i18n>compradorDetalle} {orderModelId>/CustomerID}"
+								minWidth="1024"
+								editable="false"
+								layout="ResponsiveGridLayout"
+                                 >
+                <IconTabBar
+                    id="idIconTabBarMulti"
+                    expanded="{device>/isNoPhone}"
+                    class="sapUiResponsiveContentPadding"
+                    selectedKey="info">
+                    <items>
+                    
+                        <IconTabFilter icon="sap-icon://hint" key="info">
+                            <VBox wrap="Wrap" renderType="Bare" >
+                            <HBox>
+                            <Label design="Bold" text="{i18n>labelOrderId}"></Label>
+                            <Text text="{orderModelId>/OrderID}"></Text>
+                            </HBox>
+                            <HBox>
+                            <Label design="Bold" text="{i18n>labelCustomerId}"></Label>
+                            <Text text=" {orderModelId>/CustomerID}"></Text>
+                            </HBox>
+                            </VBox>
+
+                        </IconTabFilter>
+
+                        <IconTabFilter icon="sap-icon://away" key="time">
+                            <VBox wrap="Wrap" renderType="Bare">
+                            <HBox>
+                            <Label design="Bold" text=" {i18n>labelOrderDate}"></Label>
+                            <Text text=" {orderModelId>/OrderDate}"></Text>
+                            </HBox>
+                            <HBox>
+                            <Label design="Bold" text=" {i18n>labelRequiredDate}"></Label>
+                            <Text text="{orderModelId>/RequiredDate} "></Text>
+                            </HBox> 
+                            <HBox>
+                            <Label design="Bold" text=" {i18n>labelShippedDate}"></Label>
+                            <Text text="{orderModelId>/ShippedDate} "></Text>
+                            </HBox>
+                            </VBox >
+                        </IconTabFilter>
+
+                        <IconTabFilter icon="sap-icon://clinical-tast-tracker" key="tasks">
+                            <VBox wrap="Wrap" renderType="Bare" >
+                            <HBox>
+                            <Label design="Bold" text=" {i18n>labelShipVia}" ></Label>
+                            <Text text="{orderModelId>/ShipVia} "></Text>
+                            </HBox>
+                            <HBox>
+                            <Label design="Bold" text=" {i18n>labelFreight}"></Label>
+                            <Text text="{orderModelId>/Freight} "></Text>
+                            </HBox>
+                            <HBox>
+                            <Label design="Bold" text=" {i18n>labelShipName}"></Label>
+                            <Text  text="{orderModelId>/ShipName} "></Text>
+                            </HBox>
+                            <Label design="Bold" text=" {i18n>labelShipAddress}"></Label>
+                            <Text text="{orderModelId>/ShipAddress} "></Text>
+                            <HBox>
+                            <Label design="Bold" text=" {i18n>labelShipCity}"></Label>
+                            <Text text="{orderModelId>/ShipCity} "></Text>
+                            </HBox>
+                            <HBox>
+                            <Label design="Bold" text=" {i18n>labelPostalCode}"></Label>
+                            <Text text="{orderModelId>/ShipPostalCode} "></Text>
+                            </HBox>
+                            <HBox>
+                            <Label design="Bold" text=" {i18n>labelCountry}"></Label>
+                            <Text text="{orderModelId>/ShipCountry} "></Text>
+                            </HBox>
+                            </VBox >
+                        </IconTabFilter>
+                    
+                    </items>
+                    </IconTabBar>
+                </form:SimpleForm>
+
+        </content>
+	</Page>
+
+
+</mvc:View>

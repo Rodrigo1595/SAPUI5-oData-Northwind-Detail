@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Northwind-PruebaNorthwind",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/northwind-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/PruebaNorthwindPruebaNorthwind/index.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/PruebaNorthwind",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/Northwind/PruebaNorthwind\"}"
+      },
+      "envFile": "${workspaceFolder}/PruebaNorthwind/.env3",
+      "preLaunchTask": "Build Northwind"
+    }
+  ]
+}

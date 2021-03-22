@@ -1,0 +1,56 @@
+<mvc:View controllerName="PruebaNorthwind.PruebaNorthwind.controller.mainService" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+		<content>
+            <VBox>
+                <MessageStrip
+					text="{i18n>messageStrip}"
+					type="Information"
+					showIcon="true"
+                    >
+				</MessageStrip>
+            </VBox>
+            <Table items='{orderModel>/value}' alternateRowColors="true">
+            <headerToolbar>
+            <OverflowToolbar id="toolbar"  design="Info" height="2rem"  >
+                <Text id="myText" text="{i18n>toolbarMessage}"/>
+                <ToolbarSpacer/>
+                <Button id="btnLanguage" press="cambiarLenguaje" type="Transparent" text="{i18n>buttonLenguaje}"/>
+	        </OverflowToolbar>
+            </headerToolbar>
+                <columns>
+            <!-- Rellenar Columnas -->
+            <Column>
+            <Text text='{i18n>colOrderID}'></Text>
+            </Column>
+            <Column>
+            <Text text='{i18n>colProductID}'></Text>
+            </Column>
+            <Column>
+            <Text text='{i18n>colUnitPrice}'></Text>
+            </Column>
+            <Column>
+            <Text text='{i18n>colQuantity}'></Text>
+            </Column>
+            <Column>
+            <Text text='{i18n>colDiscount}'></Text>
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem press="onPressItem" type="Active">
+            <!-- Rellenar Celdas -->
+                <cells >
+                    <Text text='{orderModel>OrderID}' ></Text>
+                    <Text text='{orderModel>ProductID}'></Text>
+                    <Text text='{orderModel>UnitPrice}'></Text>
+                    <Text text='{orderModel>Quantity}'></Text>
+                    <Text text='{orderModel>Discount}'></Text>
+                </cells>
+            </ColumnListItem>
+         </items>
+
+            </Table>
+        </content>
+	</Page>
+
+
+</mvc:View>
